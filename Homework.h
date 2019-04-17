@@ -1,10 +1,11 @@
 #pragma once
+#include <iostream>
 
-enum status{
+enum status : unsigned int{
     incomplete = 0,
-    inProgress = 1,
-    late = 2,
-    complete = 3
+    inProgress,
+    late,
+    complete
 };
 
 class Homework{
@@ -12,6 +13,8 @@ private:
     status HWStatus;
 public:
     Homework();
+    Homework(status HWstat);
+    void setHWStatus(status num);
     status getHWStatus();
     ~Homework();
 };
