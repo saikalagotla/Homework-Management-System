@@ -4,8 +4,9 @@ Homework::Homework(){
     HWStatus = incomplete;
 }
 
-Homework::Homework(status HWstat){
+Homework::Homework(status HWstat, std::string title){
     HWStatus = HWstat;
+    this->title = title;
 }
 
 void Homework::setHWStatus(status num){
