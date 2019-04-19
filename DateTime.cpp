@@ -1,22 +1,22 @@
- #include "DateTime.h"
+#include "DateTime.h"
 
-DateTime::DateTime(std::string dat = "1/1/1111", std::string tim = "11:59"){
-    date = dat;
-    time = tim;
-}
-    
-void DateTime::setDate(std::string dat){
-   date = dat;
+DateTime::DateTime(std::string dat, std::string tim) {
+	date = dat;
+	time = tim;
 }
 
-void DateTime::setTime(std::string tim){
-    time = tim;
+void DateTime::setDate(std::string dat) {
+	date = dat;
 }
 
-std::string DateTime::getDate(){
-    return date;
+void DateTime::setTime(std::string tim) {
+	time = tim;
 }
 
-std::string DateTime::getTime(){
-    return time;
+std::string DateTime::getDate() {
+	return date;
+}
+
+std::string DateTime::getTime() {
+	return time;
 }

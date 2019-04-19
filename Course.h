@@ -1,16 +1,17 @@
 #pragma once
-#include <iostream>
-#include "Homework.h"
 #include "Instructor.h"
 
-class Course:public Homework{
+class Course :public Instructor {
 private:
-    Instructor in;
-    Homework hw;
-    
+	std::string courseName;
+	Instructor in;
+	Homework hw;
+
 public:
-    Course();
-    Course(Homework h);
-    void setHomeWork(Homework h);
-    Homework getHomeWork();
+	Course(std::string cName = "course", Homework h = Homework());
+	void setCourseName(std::string cName);
+	std::string getCourseName();
+	void setHomeWork(Homework h);
+	Homework getHomeWork();
+	void display();
 };

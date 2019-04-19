@@ -1,13 +1,13 @@
 #include "Instructor.h"
 
-Instructor::Instructor(std::string nam = "John"){
-    name = nam;
+Instructor::Instructor(std::string nam) {
+	name = nam;
 }
 
-void Instructor::setName(std::string nam){
-    name = nam;
+void Instructor::setInstructorName(std::string nam) {
+	name = nam;
 }
 
-std::string Instructor::getName(){
-    return name;
+std::string Instructor::getInstructorName() {
+	return name;
 }

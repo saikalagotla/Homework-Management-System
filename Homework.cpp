@@ -1,22 +1,35 @@
 #include "Homework.h"
 
-Homework::Homework(){
-    HWStatus = incomplete;
+Homework::Homework(std::string title, std::string discrpition, status HWstat) {
+	this->title = title;
+	this->discription = discription;
+	HWStatus = HWstat;
 }
 
-Homework::Homework(status HWstat, std::string title){
-    HWStatus = HWstat;
-    this->title = title;
+void Homework::setHWTitle(std::string title) {
+	this->title = title;
 }
 
-void Homework::setHWStatus(status num){
-    HWStatus = num;
+void Homework::setHWDiscription(std::string discription) {
+	this->discription = discription;
 }
 
-status Homework::getHWStatus(){
-    return HWStatus;
+void Homework::setHWStatus(status num) {
+	HWStatus = num;
 }
 
-Homework::~Homework(){
+std::string Homework::getHWTitle() {
+	return title;
+}
+
+std::string Homework::getHWDiscription() {
+	return discription;
+}
+
+status Homework::getHWStatus() {
+	return HWStatus;
+}
+
+Homework::~Homework() {
 
 }
