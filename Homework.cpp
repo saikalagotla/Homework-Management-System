@@ -1,6 +1,12 @@
 #include "Homework.h"
 
-Homework::Homework(std::string title, std::string discrpition, status HWstat) {
+Homework::Homework() {
+	this->title = "title";
+	this->discription = "discription";
+	HWStatus = incomplete;
+}
+
+Homework::Homework(std::string title, std::string discription, status HWstat) {
 	this->title = title;
 	this->discription = discription;
 	HWStatus = HWstat;

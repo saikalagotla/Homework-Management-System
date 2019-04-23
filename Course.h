@@ -1,17 +1,21 @@
 #pragma once
 #include "Instructor.h"
+#include <vector>
 
 class Course :public Instructor {
 private:
 	std::string courseName;
-	Instructor in;
-	Homework hw;
+	Instructor instruc;
+	std::vector<Homework> hw;
+	std::vector<DateTime>  d;
 
 public:
-	Course(std::string cName = "course", Homework h = Homework());
+	Course();
+	Course(std::string cName, Instructor i, Homework h, DateTime d1);
 	void setCourseName(std::string cName);
 	std::string getCourseName();
-	void setHomeWork(Homework h);
+	void addHomeWork(Homework h, DateTime d1);
+	void deleteHomeWork(std::string title);
 	Homework getHomeWork();
 	void display();
 };

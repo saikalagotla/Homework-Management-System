@@ -1,7 +1,7 @@
 #pragma once
 #include "DateTime.h"
 
-enum status : unsigned int {
+enum status {
 	incomplete = 0,
 	inProgress,
 	late,
@@ -14,7 +14,8 @@ private:
 	std::string discription;
 	status HWStatus;
 public:
-	Homework(std::string title = "title", std::string discrpition = "discription", status HWstat = incomplete);
+	Homework();
+	Homework(std::string title, std::string discrpition, status HWstat);
 	void setHWTitle(std::string title);
 	void setHWDiscription(std::string discription);
 	void setHWStatus(status stat);
