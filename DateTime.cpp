@@ -1,20 +1,33 @@
 #include "DateTime.h"
 
-DateTime::DateTime(std::string dat, std::string tim) {
-	date = dat;
+DateTime::DateTime(int d, int m, int y, std::string tim) {
+	
+	day = d;
+	month = m;
+	year = y;
 	time = tim;
 }
 
-void DateTime::setDate(std::string dat) {
-	date = dat;
+void DateTime::setDate(int d, int m, int y) {
+	day = d;
+	month = m;
+	year = y;
 }
 
 void DateTime::setTime(std::string tim) {
 	time = tim;
 }
 
-std::string DateTime::getDate() {
-	return date;
+int DateTime::getDay() {
+	return day;
+}
+
+int DateTime::getMonth() {
+	return month;
+}
+
+int DateTime::getYear() {
+	return year;
 }
 
 std::string DateTime::getTime() {

@@ -4,12 +4,16 @@
 
 class DateTime {
 private:
-	std::string date;
+	int day;
+	int month;
+	int year;
 	std::string time;
 public:
-	DateTime(std::string dat = "1/1/1111", std::string tim = "11:59");
-	void setDate(std::string dat);
-	void setTime(std::string tim);
-	std::string getDate();
+	DateTime(int d = 0, int m = 0, int y = 0, std::string tim = "11:59");
+	void setDate(int, int, int);
+	void setTime(std::string);
+	int getDay();
+	int getMonth();
+	int getYear();
 	std::string getTime();
 };

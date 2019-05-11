@@ -1,5 +1,9 @@
 #include "Instructor.h"
 
+Instructor::Instructor() {
+	name = "John Doe";
+}
+
 Instructor::Instructor(std::string nam) {
 	name = nam;
 }

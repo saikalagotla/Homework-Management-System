@@ -8,19 +8,26 @@ enum status {
 	complete
 };
 
-class Homework :public DateTime {
+class Homework {
 private:
 	std::string title;
-	std::string discription;
+	std::string description;
 	status HWStatus;
+	DateTime dueDate;
 public:
 	Homework();
-	Homework(std::string title, std::string discrpition, status HWstat);
-	void setHWTitle(std::string title);
-	void setHWDiscription(std::string discription);
-	void setHWStatus(status stat);
+	Homework(std::string, std::string, status, DateTime);
+	void setHWTitle(std::string);
+	void setHWDiscription(std::string);
+	void setHWStatus(status);
+	void setDueDate(DateTime);
 	std::string getHWTitle();
 	std::string getHWDiscription();
 	status getHWStatus();
+	DateTime getDueDate();
+	int getDueDay();
+	int getDueMonth();
+	int getDueYear();
+	std::string getDueTime();
 	~Homework();
 };

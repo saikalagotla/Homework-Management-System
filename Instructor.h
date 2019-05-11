@@ -1,11 +1,12 @@
 #pragma once
 #include "Homework.h"
 
-class Instructor :public Homework {
+class Instructor {
 private:
 	std::string name;
 public:
-	Instructor(std::string nam = "John Doe");
-	void setInstructorName(std::string nam);
+	Instructor();
+	Instructor(std::string);
+	void setInstructorName(std::string);
 	std::string getInstructorName();
 };

@@ -1,47 +1,66 @@
+/*
+Author: Sai Kalagotla
+Professor: Grace Zhao
+Date: 5/7/2019
+Discription: Homework Management System
+*/
+
 #include "Course.h"
 
 int main() {
+	
 	Instructor inst("Grace Zhao");
 	
-	Homework foundationsHW("Final Project", "Homework Tracking Management System", inProgress);
-	DateTime d1("5/8/2019");
+	DateTime d1(8,5,2019);
+	Homework foundationsHW("Final Project", "Homework Tracking Management System", inProgress, d1);
 
-	//makes a course named Foundations... with 1 homework
-	Course foundations("Foundations of Computer Programming II", inst, foundationsHW, d1);
+	DateTime d2(21,4,2019);
+	Homework foundationsHW2("Assignment 1", "OOP", inProgress, d2);
 
-	Homework foundationsHW2("Final Projec", "Homework Tracking Management System", inProgress);
-	DateTime d2("5/21/2019");
+	DateTime d3(4,5,2019);
+	Homework foundationsHW3("Assignment 2", "File Management", inProgress, d3);
 
-	Homework foundationsHW3("Assignment 6", "OOP", complete);
-	DateTime d3("4/21/2019");
+	Course foundations("Foundations of Computer Programming II", inst, foundationsHW);
 
-	//adds a homework to the foundations class
-	foundations.addHomeWork(foundationsHW2, d2);
-	foundations.addHomeWork(foundationsHW3, d3);
+	foundations.addHomeWork(foundationsHW2);
+	foundations.addHomeWork(foundationsHW3);
 
-	foundations.deleteHomeWork("Final Projec");
+	foundations.completeHomework(foundationsHW2, "completedHomeworks.txt");
+	
+	//operator overloading
+	foundations - "Assignment 2";
+
+	//function chaining
+	std::cout << "Function chaining: " << foundations.setCourseName("Foundations II").getCourseName() << std::endl << std::endl;
 
 	foundations.display();
 	
-	//--------------------------------------------------------------------------------------
-	//--------------------------------------------------------------------------------------
+	Instructor inst1("Bob Bobby");
 
-	//new course
-	std::cout << std::endl << std::endl;
+	DateTime UD1(7,5,2019);
+	Homework UnixHW("HW08", "Textbook homework", inProgress, UD1);
 
-	Instructor inst1("Harry Espilat");
+	DateTime UD2(19,4,2019);
+	Homework UnixLab("LAB08", "Textbook lab", complete, UD2);
 
-	Homework UnixHW("HW08", "Textbook homework", inProgress);
-	DateTime UD1("5/8/2019");
+	Course Unix("Unix Operating System", inst1, UnixHW);
 
-	Course Unix("Unix Operating System", inst1, UnixHW, UD1);
-
-	Homework UnixLab("LAB08", "Textbook lab", complete);
-	DateTime UD2("4/19/2019");
-
-	Unix.addHomeWork(UnixLab, UD2);
+	Unix.addHomeWork(UnixLab);
+	
+	std::cout << std::endl;
 
 	Unix.display();
+
+	DateTime date(5, 5, 2019, "11:59");
+
+	std::cout << std::endl << "DUE IN THREE DAYS: " << std::endl;
+	
+	// Due in three days from current time
+	Unix.dueInThreeDays();
+
+	//function overloading
+	// Due in three days from given time
+	foundations.dueInThreeDays(date);
 	
 	std::cin.get();
 	return 0;
